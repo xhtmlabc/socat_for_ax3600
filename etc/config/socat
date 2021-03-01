@@ -1,0 +1,9 @@
+# forward port 8000 on IPv6 to IPv4 host port 80
+# change enable to '1' to use this example
+config socat '8089'
+	option enable '1'
+	option SocatOptions '-d -d TCP6-LISTEN:8089,fork TCP4:192.168.31.1:80'
+
+config socat '8090'
+	option enable '1'
+	option SocatOptions '-d -d TCP6-LISTEN:8090,fork TCP4:192.168.31.254:80'
